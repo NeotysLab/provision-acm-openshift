@@ -176,6 +176,30 @@
                 <successThreshold>0</successThreshold>
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              <name>neoload</name>
+              <image>neoload:latest</image>
+              <privileged>true</privileged>
+              <alwaysPullImage>true</alwaysPullImage>
+              <workingDir>/home/neoload</workingDir>
+              <command>/bin/sh -c</command>
+              <args>cat</args>
+              <ttyEnabled>true</ttyEnabled>
+              <resourceRequestCpu></resourceRequestCpu>
+              <resourceRequestMemory></resourceRequestMemory>
+              <resourceLimitCpu></resourceLimitCpu>
+              <resourceLimitMemory></resourceLimitMemory>
+              <envVars/>
+              <ports/>
+              <livenessProbe>
+                <execArgs></execArgs>
+                <timeoutSeconds>0</timeoutSeconds>
+                <initialDelaySeconds>0</initialDelaySeconds>
+                <failureThreshold>0</failureThreshold>
+                <periodSeconds>0</periodSeconds>
+                <successThreshold>0</successThreshold>
+              </livenessProbe>
+            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
           </containers>
           <envVars/>
           <annotations/>
@@ -705,7 +729,7 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>5</int>
+          <int>7/int>
           <string>DOCKER_REGISTRY_URL</string>
           <string>DOCKER_REGISTRY_URL_PLACEHOLDER</string>
           <string>GITHUB_USER_EMAIL</string>
@@ -716,6 +740,10 @@
           <string>https://DT_TENANT_URL_PLACEHOLDER</string>
           <string>DT_API_TOKEN</string>
           <string>DT_API_TOKEN_PLACEHOLDER</string>
+          <string>NL_WEB_API_KEY</string>
+          <string>NL_WEB_API_KEY_PLACEHOLDER</string>
+          <string>DT_ACCOUNTID</string>
+          <string>DT_ACCOUNTID_PLACEHOLDER<</string>
         </tree-map>
       </envVars>
     </hudson.slaves.EnvironmentVariablesNodeProperty>
