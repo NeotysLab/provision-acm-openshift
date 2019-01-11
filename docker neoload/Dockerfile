@@ -41,8 +41,6 @@ RUN set -ex && \
 
 COPY --chown=jenkins:jenkins --from=builder /neoload /neoload
 
-ADD ./entrypoint.sh ./controller-entrypoint.sh ./controller-agent-entrypoint.sh /neoload
-
 USER ${user}
 
 ENTRYPOINT ["/bin/sh"]
