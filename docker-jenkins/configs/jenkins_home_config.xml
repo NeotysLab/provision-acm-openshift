@@ -28,7 +28,7 @@
       <templates>
         <org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
           <inheritFrom></inheritFrom>
-          <name>maven-docker-k8s-jmeter</name>
+          <name>maven-docker-k8s-neoload</name>
           <namespace></namespace>
           <privileged>false</privileged>
           <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
@@ -129,8 +129,8 @@
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-              <name>jmeter</name>
-              <image>quay.io/dtacmworkshop/jmeter</image>
+              <name>neoload</name>
+              <image>neotys/neoload-controller-acm:latest</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
@@ -158,30 +158,6 @@
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
-              <command>/bin/sh -c</command>
-              <args>cat</args>
-              <ttyEnabled>true</ttyEnabled>
-              <resourceRequestCpu></resourceRequestCpu>
-              <resourceRequestMemory></resourceRequestMemory>
-              <resourceLimitCpu></resourceLimitCpu>
-              <resourceLimitMemory></resourceLimitMemory>
-              <envVars/>
-              <ports/>
-              <livenessProbe>
-                <execArgs></execArgs>
-                <timeoutSeconds>0</timeoutSeconds>
-                <initialDelaySeconds>0</initialDelaySeconds>
-                <failureThreshold>0</failureThreshold>
-                <periodSeconds>0</periodSeconds>
-                <successThreshold>0</successThreshold>
-              </livenessProbe>
-            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-              <name>neoload</name>
-              <image>neoload:latest</image>
-              <privileged>true</privileged>
-              <alwaysPullImage>true</alwaysPullImage>
-              <workingDir>/home/neoload</workingDir>
               <command>/bin/sh -c</command>
               <args>cat</args>
               <ttyEnabled>true</ttyEnabled>
@@ -253,8 +229,8 @@
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-              <name>jmeter</name>
-              <image>quay.io/dtacmworkshop/jmeter</image>
+              <name>neoload</name>
+              <image>neotys/neoload-controller-acm:latest</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
@@ -511,8 +487,8 @@
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-              <name>jmeter</name>
-              <image>quay.io/dtacmworkshop/jmeter</image>
+              <name>neoload</name>
+              <image>neotys/neoload-controller-acm:latest</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
@@ -635,8 +611,8 @@
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-              <name>jmeter</name>
-              <image>quay.io/dtacmworkshop/jmeter</image>
+              <name>neoload</name>
+              <image>neotys/neoload-controller-acm:latest</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
