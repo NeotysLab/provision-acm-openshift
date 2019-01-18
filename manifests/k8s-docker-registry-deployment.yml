@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: docker-registry
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   replicas: 1
   selector:

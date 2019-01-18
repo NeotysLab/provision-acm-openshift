@@ -2,7 +2,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "carts"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -22,7 +22,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "catalogue"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -42,7 +42,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "front-end"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -62,7 +62,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "orders"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -82,7 +82,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "payment"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -102,7 +102,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "queue-master"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -122,7 +122,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "shipping"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -142,7 +142,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "user"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -162,7 +162,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "create-release-branch"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -180,7 +180,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "k8s-deploy-production"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -195,7 +195,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "k8s-deploy-production-canary"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -210,7 +210,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "k8s-deploy-production-update"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:
@@ -225,7 +225,7 @@ apiVersion: v1
 kind: "BuildConfig"
 metadata:
   name: "k8s-deploy-staging"
-  namespace: cicd
+  namespace: cicd_neotys
 spec:
   source:
     git:

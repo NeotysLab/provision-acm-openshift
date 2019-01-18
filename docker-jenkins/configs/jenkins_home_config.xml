@@ -153,8 +153,8 @@
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-              <name>curl</name>
-              <image>byrnedo/alpine-curl</image>
+              <name>git</name>
+              <image>alpine/git</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
@@ -231,6 +231,30 @@
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
               <name>neoload</name>
               <image>neotys/neoload-controller-acm:latest</image>
+              <privileged>false</privileged>
+              <alwaysPullImage>false</alwaysPullImage>
+              <workingDir>/home/jenkins</workingDir>
+              <command>/bin/sh -c</command>
+              <args>cat</args>
+              <ttyEnabled>true</ttyEnabled>
+              <resourceRequestCpu></resourceRequestCpu>
+              <resourceRequestMemory></resourceRequestMemory>
+              <resourceLimitCpu></resourceLimitCpu>
+              <resourceLimitMemory></resourceLimitMemory>
+              <envVars/>
+              <ports/>
+              <livenessProbe>
+                <execArgs></execArgs>
+                <timeoutSeconds>0</timeoutSeconds>
+                <initialDelaySeconds>0</initialDelaySeconds>
+                <failureThreshold>0</failureThreshold>
+                <periodSeconds>0</periodSeconds>
+                <successThreshold>0</successThreshold>
+              </livenessProbe>
+            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              <name>curl</name>
+              <image>byrnedo/alpine-curl</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
@@ -534,6 +558,29 @@
                 <successThreshold>0</successThreshold>
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <name>git</name>
+            <image>alpine/git</image>
+            <privileged>false</privileged>
+            <alwaysPullImage>false</alwaysPullImage>
+            <workingDir>/home/jenkins</workingDir>
+            <command>/bin/sh -c</command>
+            <args>cat</args>
+            <ttyEnabled>true</ttyEnabled>
+            <resourceRequestCpu></resourceRequestCpu>
+            <resourceRequestMemory></resourceRequestMemory>
+            <resourceLimitCpu></resourceLimitCpu>
+            <resourceLimitMemory></resourceLimitMemory>
+            <envVars/>
+            <ports/>
+            <livenessProbe>
+              <execArgs></execArgs>
+              <timeoutSeconds>0</timeoutSeconds>
+              <initialDelaySeconds>0</initialDelaySeconds>
+              <failureThreshold>0</failureThreshold>
+              <periodSeconds>0</periodSeconds>
+              <successThreshold>0</successThreshold>
+            </livenessProbe>
           </containers>
           <envVars/>
           <annotations/>

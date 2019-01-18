@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cicd
+  name: cicd_neotys
 ---
 # namespace for development stage - all successful builds will be pushed to dev
 apiVersion: v1
