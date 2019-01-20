@@ -2,7 +2,7 @@
 
 YLW='\033[1;33m'
 NC='\033[0m'
-
+GITREFREPO="Neotyslab"
 type hub &> /dev/null
 
 if [ $? -ne 0 ]
@@ -38,8 +38,8 @@ cd repositories
 for repo in "${repositories[@]}"
 do
     #FOLDER=$(echo $repo | cut -d '/' -f 5)
-	echo -e "${YLW}Cloning https://github.com/NeotysLab/$repo ${NC}"
-	git clone -q "https://github.com//$repo"
+	echo -e "${YLW}Cloning https://github.com/$GITREFREPO/$repo ${NC}"
+	git clone -q "https://github.com/$GITREFREPO/$repo"
 	cd $repo
 	echo -e "${YLW}Forking $repo to $ORG ${NC}"
     hub fork --org=$ORG

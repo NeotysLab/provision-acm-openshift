@@ -176,6 +176,30 @@
                 <successThreshold>0</successThreshold>
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              <name>curl</name>
+              <image>byrnedo/alpine-curl</image>
+              <privileged>false</privileged>
+              <alwaysPullImage>false</alwaysPullImage>
+              <workingDir>/home/jenkins</workingDir>
+              <command>/bin/sh -c</command>
+              <args>cat</args>
+              <ttyEnabled>true</ttyEnabled>
+              <resourceRequestCpu></resourceRequestCpu>
+              <resourceRequestMemory></resourceRequestMemory>
+              <resourceLimitCpu></resourceLimitCpu>
+              <resourceLimitMemory></resourceLimitMemory>
+              <envVars/>
+              <ports/>
+              <livenessProbe>
+                <execArgs></execArgs>
+                <timeoutSeconds>0</timeoutSeconds>
+                <initialDelaySeconds>0</initialDelaySeconds>
+                <failureThreshold>0</failureThreshold>
+                <periodSeconds>0</periodSeconds>
+                <successThreshold>0</successThreshold>
+              </livenessProbe>
+            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
           </containers>
           <envVars/>
           <annotations/>
@@ -255,6 +279,54 @@
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
               <name>curl</name>
               <image>byrnedo/alpine-curl</image>
+              <privileged>false</privileged>
+              <alwaysPullImage>false</alwaysPullImage>
+              <workingDir>/home/jenkins</workingDir>
+              <command>/bin/sh -c</command>
+              <args>cat</args>
+              <ttyEnabled>true</ttyEnabled>
+              <resourceRequestCpu></resourceRequestCpu>
+              <resourceRequestMemory></resourceRequestMemory>
+              <resourceLimitCpu></resourceLimitCpu>
+              <resourceLimitMemory></resourceLimitMemory>
+              <envVars/>
+              <ports/>
+              <livenessProbe>
+                <execArgs></execArgs>
+                <timeoutSeconds>0</timeoutSeconds>
+                <initialDelaySeconds>0</initialDelaySeconds>
+                <failureThreshold>0</failureThreshold>
+                <periodSeconds>0</periodSeconds>
+                <successThreshold>0</successThreshold>
+              </livenessProbe>
+            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              <name>kubectl</name>
+              <image>lachlanevenson/k8s-kubectl:v1.12.1</image>
+              <privileged>false</privileged>
+              <alwaysPullImage>false</alwaysPullImage>
+              <workingDir>/home/jenkins</workingDir>
+              <command>/bin/sh -c</command>
+              <args>cat</args>
+              <ttyEnabled>true</ttyEnabled>
+              <resourceRequestCpu></resourceRequestCpu>
+              <resourceRequestMemory></resourceRequestMemory>
+              <resourceLimitCpu></resourceLimitCpu>
+              <resourceLimitMemory></resourceLimitMemory>
+              <envVars/>
+              <ports/>
+              <livenessProbe>
+                <execArgs></execArgs>
+                <timeoutSeconds>0</timeoutSeconds>
+                <initialDelaySeconds>0</initialDelaySeconds>
+                <failureThreshold>0</failureThreshold>
+                <periodSeconds>0</periodSeconds>
+                <successThreshold>0</successThreshold>
+              </livenessProbe>
+            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              <name>maven</name>
+              <image>maven:3.3.9-jdk-8-alpine</image>
               <privileged>false</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/home/jenkins</workingDir>
@@ -705,6 +777,30 @@
                 <successThreshold>0</successThreshold>
               </livenessProbe>
             </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+            <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              <name>maven</name>
+              <image>maven:3.3.9-jdk-8-alpine</image>
+              <privileged>false</privileged>
+              <alwaysPullImage>false</alwaysPullImage>
+              <workingDir>/home/jenkins</workingDir>
+              <command>/bin/sh -c</command>
+              <args>cat</args>
+              <ttyEnabled>true</ttyEnabled>
+              <resourceRequestCpu></resourceRequestCpu>
+              <resourceRequestMemory></resourceRequestMemory>
+              <resourceLimitCpu></resourceLimitCpu>
+              <resourceLimitMemory></resourceLimitMemory>
+              <envVars/>
+              <ports/>
+              <livenessProbe>
+                <execArgs></execArgs>
+                <timeoutSeconds>0</timeoutSeconds>
+                <initialDelaySeconds>0</initialDelaySeconds>
+                <failureThreshold>0</failureThreshold>
+                <periodSeconds>0</periodSeconds>
+                <successThreshold>0</successThreshold>
+              </livenessProbe>
+            </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
           </containers>
           <envVars/>
           <annotations/>
@@ -718,7 +814,7 @@
       <skipTlsVerify>false</skipTlsVerify>
       <addMasterProxyEnvVars>false</addMasterProxyEnvVars>
       <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
-      <namespace>cicd</namespace>
+      <namespace>cicd_neotys</namespace>
       <jenkinsUrl>http://jenkins:24711</jenkinsUrl>
       <containerCap>10</containerCap>
       <retentionTimeout>5</retentionTimeout>
@@ -752,7 +848,7 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>7/int>
+          <int>7</int>
           <string>DOCKER_REGISTRY_URL</string>
           <string>DOCKER_REGISTRY_URL_PLACEHOLDER</string>
           <string>GITHUB_USER_EMAIL</string>
@@ -766,7 +862,7 @@
           <string>NL_WEB_API_KEY</string>
           <string>NL_WEB_API_KEY_PLACEHOLDER</string>
           <string>DT_ACCOUNTID</string>
-          <string>DT_ACCOUNTID_PLACEHOLDER<</string>
+          <string>DT_ACCOUNTID_PLACEHOLDER</string>
         </tree-map>
       </envVars>
     </hudson.slaves.EnvironmentVariablesNodeProperty>
