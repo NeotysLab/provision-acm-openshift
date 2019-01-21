@@ -22,6 +22,8 @@ sed -i 's/GITHUB_ORGANIZATION_PLACEHOLDER/'"$GITHUB_ORGANIZATION"'/' ../manifest
 sed -i 's/DOCKER_REGISTRY_IP_PLACEHOLDER/docker-registry.default.svc/' ../manifests/k8s-jenkins-deployment_tmp.yml
 sed -i 's/DT_TENANT_URL_PLACEHOLDER/'"$DT_TENANT_URL"'/' ../manifests/k8s-jenkins-deployment_tmp.yml
 sed -i 's/DT_API_TOKEN_PLACEHOLDER/'"$DT_API_TOKEN"'/' ../manifests/k8s-jenkins-deployment_tmp.yml
+sed -i 's/NL_WEB_API_KEY_PLACEHOLDER/'"$NL_WEB_API_KEY"'/' ../manifests/k8s-jenkins-deployment_tmp.yml
+sed -i 's/DT_ACCOUNTID_PLACEHOLDER/'"$DT_ACCOUNTID"'/' ../manifests/k8s-jenkins-deployment_tmp.yml
 
 # configure the host path volume plugin
 oc create -f ../manifests/oc-scc-hostpath.yml
@@ -36,7 +38,7 @@ oc create -f ../manifests/k8s-jenkins-rbac.yml
 
 rm ../manifests/k8s-jenkins-deployment_tmp.yml
 
-oc project cicd
+oc project cicd_neotys
 # create a route for the jenkins service
 oc expose svc/jenkins
 
@@ -116,9 +118,9 @@ curl -X POST http://$JENKINS_URL/credentials/store/system/domain/_/createCredent
 }'
 
 # set up openshift sync plugin
-oc project cicd
+oc project cicd_neotys
 oc create serviceaccount jenkins
-oc adm policy add-cluster-role-to-user edit system:serviceaccount:cicd:jenkins
+oc adm policy add-cluster-role-to-user edit system:serviceaccount:cicd_neotys:jenkins
 export JENKINS_SYNC_TOKEN=$(oc serviceaccounts get-token jenkins -n cicd)
 
 curl -X POST http://$JENKINS_URL/credentials/store/system/domain/_/createCredentials --user $JENKINS_USER:$JENKINS_PASSWORD \

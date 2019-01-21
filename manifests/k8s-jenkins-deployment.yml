@@ -48,6 +48,10 @@ spec:
             value: DT_TENANT_URL_PLACEHOLDER
           - name: DT_API_TOKEN
             value: DT_API_TOKEN_PLACEHOLDER
+          - name: DT_ACCOUNTID
+            value: DT_ACCOUNTID_PLACEHOLDER
+          - name: NL_WEB_API_KEY
+            value: NL_WEB_API_KEY_PLACEHOLDER
         ports:
         - containerPort: 8080
         - containerPort: 50000

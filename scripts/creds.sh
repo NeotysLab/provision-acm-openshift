@@ -5,7 +5,6 @@ cp ./creds.sav $CREDS
 echo Please enter the credentials as requested below:  
 read -p "Dynatrace Tenant: (default=$DTENV)" DTENVC
 read -p "Dynatrace API Token: (default=$DTENV) " DTAPIC
-read -p "Dynatrace accountid: (default=$DTAPI) " DTACCID
 read -p "Dynatrace PaaS Token: (default=$DTAPI) " DTPAAST
 read -p "github User Name: " GITU 
 read -p "github Personal Access Token: " GITAT
@@ -28,7 +27,7 @@ echo ""
 echo "Please confirm all are correct:"
 echo "Dynatrace Tenant: $DTENV.live.dynatrace.com"
 echo "Dynatrace API Token: $DTAPI"
-echo "Dynatrace AccountID : $DTAPIC"
+echo "Dynatrace AccountID : $DTENV"
 echo "Dynatrace PaaS Token: $DTPAAST"
 echo "github User Name: $GITU"
 echo "github Personal Access Token: $GITAT"
@@ -42,7 +41,7 @@ then
   sed -i 's/DYNATRACE_TENANT_PLACEHOLDER/'"$DTENV".live.dynatrace.com'/' $CREDS
   sed -i 's/DYNATRACE_API_TOKEN/'"$DTAPI"'/' $CREDS
   sed -i 's/DYNATRACE_PAAS_TOKEN/'"$DTPAAST"'/' $CREDS
-  sed -i 's/DT_ACCOUNTID_PLACEHOLDER/'"$DTAPIC"'/' $CREDS
+  sed -i 's/DT_ACCOUNTID_PLACEHOLDER/'"$DTENV"'/' $CREDS
   sed -i 's/GITHUB_USER_NAME_PLACEHOLDER/'"$GITU"'/' $CREDS
   sed -i 's/PERSONAL_ACCESS_TOKEN_PLACEHOLDER/'"$GITAT"'/' $CREDS
   sed -i 's/GITHUB_USER_EMAIL_PLACEHOLDER/'"$GITE"'/' $CREDS
