@@ -814,7 +814,7 @@
       <skipTlsVerify>false</skipTlsVerify>
       <addMasterProxyEnvVars>false</addMasterProxyEnvVars>
       <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
-      <namespace>cicd_neotys</namespace>
+      <namespace>cicd-neotys</namespace>
       <jenkinsUrl>http://jenkins:24711</jenkinsUrl>
       <containerCap>10</containerCap>
       <retentionTimeout>5</retentionTimeout>

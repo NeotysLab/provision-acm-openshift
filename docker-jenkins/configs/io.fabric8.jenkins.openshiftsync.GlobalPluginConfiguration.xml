@@ -4,7 +4,7 @@
   <server></server>
   <credentialsId>openshift-sync</credentialsId>
   <namespaces>
-    <string>cicd_neotys</string>
+    <string>cicd-neotys</string>
   </namespaces>
   <foldersEnabled>true</foldersEnabled>
   <jobNamePattern>*</jobNamePattern>

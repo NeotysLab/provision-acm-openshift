@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: docker-registry
-  namespace: cicd_neotys
+  namespace: cicd-neotys
 spec:
   ports:
     - port: 5000

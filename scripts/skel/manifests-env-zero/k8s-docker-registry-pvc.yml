@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: docker-registry
-  namespace: cicd_neotys
+  namespace: cicd-neotys
 spec:
   accessModes:
   - ReadWriteOnce

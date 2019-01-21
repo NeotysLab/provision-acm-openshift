@@ -38,7 +38,7 @@ oc create -f ../manifests/k8s-jenkins-rbac.yml
 
 rm ../manifests/k8s-jenkins-deployment_tmp.yml
 
-oc project cicd_neotys
+oc project cicd-neotys
 # create a route for the jenkins service
 oc expose svc/jenkins
 
@@ -118,9 +118,9 @@ curl -X POST http://$JENKINS_URL/credentials/store/system/domain/_/createCredent
 }'
 
 # set up openshift sync plugin
-oc project cicd_neotys
+oc project cicd-neotys
 oc create serviceaccount jenkins
-oc adm policy add-cluster-role-to-user edit system:serviceaccount:cicd_neotys:jenkins
+oc adm policy add-cluster-role-to-user edit system:serviceaccount:cicd-neotys:jenkins
 export JENKINS_SYNC_TOKEN=$(oc serviceaccounts get-token jenkins -n cicd)
 
 curl -X POST http://$JENKINS_URL/credentials/store/system/domain/_/createCredentials --user $JENKINS_USER:$JENKINS_PASSWORD \

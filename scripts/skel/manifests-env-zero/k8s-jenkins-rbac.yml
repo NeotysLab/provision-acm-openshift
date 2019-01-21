@@ -6,7 +6,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: cicd_neotys
+    namespace: cicd-neotys
 roleRef:
   kind: ClusterRole
   name: cluster-admin
