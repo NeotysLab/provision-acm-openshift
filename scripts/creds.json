@@ -1,13 +1,13 @@
 {
     "jenkinsUser": "admin",
     "jenkinsPassword": "AiTx4u8VyUV8tCKk",
-    "dynatraceTenant": "DYNATRACE_TENANT_PLACEHOLDER",
-    "dtaccountid": "DT_ACCOUNTID_PLACEHOLDER",
-    "nlwebapikey": "NL_WEB_API_KEY_PLACEHOLDER",
-    "dynatraceApiToken": "DYNATRACE_API_TOKEN",
-    "dynatracePaaSToken": "DYNATRACE_PAAS_TOKEN",
-    "githubUserName": "GITHUB_USER_NAME_PLACEHOLDER",
-    "githubPersonalAccessToken": "PERSONAL_ACCESS_TOKEN_PLACEHOLDER",
-    "githubUserEmail": "GITHUB_USER_EMAIL_PLACEHOLDER",
-    "githubOrg": "GITHUB_ORG_PLACEHOLDER"
+    "dynatraceTenant": "art25310.live.dynatrace.com",
+    "dtaccountid": "art25310",
+    "nlwebapikey": "15304f743f34ca33c458927a40945b7424a2066b95563774",
+    "dynatraceApiToken": "UveT8bfPR7y2TbDJr5Sb1",
+    "dynatracePaaSToken": "lb8yfSgOSTWmS0xVTavsy",
+    "githubUserName": "Neotyslab",
+    "githubPersonalAccessToken": "elRE1979",
+    "githubUserEmail": "henrik.rexed@neotys.com",
+    "githubOrg": "Neotyslab"
 }

@@ -13,7 +13,7 @@ export NL_WEB_API_KEY=$(cat creds.json | jq -r '.nlwebapikey')
 export DT_API_TOKEN=$(cat creds.json | jq -r '.dynatraceApiToken')
 export DT_PAAS_TOKEN=$(cat creds.json | jq -r '.dynatracePaaSToken')
 export GITHUB_ORGANIZATION=$(cat creds.json | jq -r '.githubOrg')
-export DT_TENANT_URL="$DT_TENANT_ID.live.dynatrace.com"
+export DT_TENANT_URL="$DT_ACCOUNTID.live.dynatrace.com"
 
 
 cp ../manifests/k8s-jenkins-deployment.yml ../manifests/k8s-jenkins-deployment_tmp.yml
@@ -69,7 +69,7 @@ oc create -f https://raw.githubusercontent.com/Dynatrace/dynatrace-oneagent-oper
 sleep 30
 oc -n dynatrace create secret generic oneagent --from-literal="apiToken=$DT_API_TOKEN" --from-literal="paasToken=$DT_PAAS_TOKEN"
 cp ../manifests/dynatrace/cr.yml ../manifests/dynatrace/cr_tmp.yml
-sed -i 's/ENVIRONMENTID/'"$DT_TENANT_ID"'/' ../manifests/dynatrace/cr_tmp.yml
+sed -i 's/ENVIRONMENTID/'"$DT_ACCOUNTID"'/' ../manifests/dynatrace/cr_tmp.yml
 oc create -f ../manifests/dynatrace/cr_tmp.yml
 rm ../manifests/dynatrace/cr_tmp.yml
 
@@ -121,7 +121,7 @@ curl -X POST http://$JENKINS_URL/credentials/store/system/domain/_/createCredent
 oc project cicd-neotys
 oc create serviceaccount jenkins
 oc adm policy add-cluster-role-to-user edit system:serviceaccount:cicd-neotys:jenkins
-export JENKINS_SYNC_TOKEN=$(oc serviceaccounts get-token jenkins -n cicd)
+export JENKINS_SYNC_TOKEN=$(oc serviceaccounts get-token jenkins -n cicd-neotys)
 
 curl -X POST http://$JENKINS_URL/credentials/store/system/domain/_/createCredentials --user $JENKINS_USER:$JENKINS_PASSWORD \
 --data-urlencode 'json={
@@ -140,4 +140,4 @@ oc apply -f ../manifests/pipelines/sockshop-pipelines_tmp.yml
 rm ../manifests/pipelines/sockshop-pipelines_tmp.yml
 
 # Install Istio service mesh
-./install-istio.sh $DT_TENANT_ID $DT_PAAS_TOKEN
+./install-istio.sh $DT_ACCOUNTID $DT_PAAS_TOKEN
